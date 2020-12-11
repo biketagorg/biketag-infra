@@ -2,7 +2,7 @@
 	"name": "biketag-app-dev",
 	"scripts": {
 		"generator": "if [ ! -e index.js ] ; then echo \"const sexpress = require('sexpress')() ; sexpress.run()\" >> index.js ; fi",
-		"firstrun": "node index debug=true",
+		"firstrun": "(node index debug=true) || true",
 		"postinstall": "npm run generator && npm run firstrun && npm update",
 		"dev": "node app.js debug=true",
 		"start": "node app.js",
@@ -25,7 +25,12 @@
 		"url": "https://github.com/KenEucker/biketag-infra.git"
 	},
 	"dependencies": {
-        "sexpress": "KenEucker/sexpress.git#production"
+		"sexpress": "^0.7.14",
+		"imgur": "https://github.com/KenEucker/node-imgur.git#keneucker/production",
+		"node-cache": "^5.1.2",
+		"path": "^0.12.7",
+		"request": "^2.88.2",
+		"snoowrap": "^1.21.0"
 	},
 	"devDependencies": {},
 	"license": "CC0 1.0 Universal",
