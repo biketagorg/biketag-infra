@@ -13,7 +13,7 @@ Uptime: `n/a`
 
 1) Clone the project:
 
-`git clone https://github.com/KenEucker/biketag-infra.git#production--biketag-app-dev ~/biketag-website`
+`git clone https://github.com/biketagorg/biketag-infra.git#production--biketag-app-dev ~/biketag-website`
 
 2) Run `npm install` in the project folder.
 
