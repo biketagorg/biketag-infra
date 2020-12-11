@@ -39,11 +39,11 @@ NOTE: to update the server, there are two scripts you can work with: `server-upd
 
 To update the app's version of seXpress and retain the same biketag-app and biketag-website code, use:
 ```
-npm run server-update
+  npm run server-update
 ```
 
 To erase all state and start from scratch with the latest versions of biketag-app and biketag-website code, use: 
 ```
-npm run wipe && npm run server-update
+  npm run wipe && npm run server-update
 ```
 
