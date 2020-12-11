@@ -35,7 +35,7 @@
 		"copyControllers": true,
 		"copyLib": true,
 		"copySrc": true,
-		"copyConfigJs": false,
+		"copyConfigJs": true,
 		"copyTemplateConfig": true,
 		"importDependencies": true,
 		"source": "https://github.com/KenEucker/biketag-app/archive/production.zip",
