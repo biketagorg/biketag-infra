@@ -1,41 +1,44 @@
 {
-    "name": "biketag-app-dev",
-    "scripts": {
-        "postinstall": "echo \"const sexpress = require('sexpress')() ; sexpress.run()\" >> index.js",
-        "dev": "node app.js debug=true",
-        "start": "node app.js",
-        "server-erase-config": "rm ~/biketag-website/config.json && rm ~/config.json",
-        "server-copy-config": "mv ~/config.json ~/biketag-website/config.json",
-        "server-update": "git pull && npm install",
-        "server-reinstall": "rm -rf node_modules && rm -rf package-lock.json && npm install",
-        "server-logs": "sudo pm2 logs BikeTag",
-        "server-dev": "sudo pm2 start ecosystem.config.js --env dev",
-        "server-start": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
-        "server-restart": "sudo pm2 restart ecosystem.config.js --env production && npm run server-logs",
-        "server-run": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
-        "server-stop": "sudo pm2 stop BikeTag",
-        "server-rerun": "sudo pm2 delete BikeTag && sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
-        "server-deploy": "npm run server-update && npm run server-restart && npm run server-logs",
-        "wipe": "(rm config/config.json || true) && rm -rf temp lib src controllers index.js app.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/KenEucker/biketag-infra.git"
-    },
-    "dependencies": {
+	"name": "biketag-app-dev",
+	"scripts": {
+		"generator": "if [ ! -e index.js ] ; then echo \"const sexpress = require('sexpress')() ; sexpress.run()\" >> index.js ; fi",
+		"firstrun": "node index debug=true",
+		"postinstall": "npm run generator && npm run firstrun && npm update",
+		"dev": "node app.js debug=true",
+		"start": "node app.js",
+		"server-erase-config": "rm ~/biketag-website/config.json && rm ~/config.json",
+		"server-copy-config": "mv ~/config.json ~/biketag-website/config.json",
+		"server-update": "git pull && npm install",
+		"server-reinstall": "rm -rf node_modules && rm -rf package-lock.json && npm install",
+		"server-logs": "sudo pm2 logs BikeTag",
+		"server-dev": "sudo pm2 start ecosystem.config.js --env dev",
+		"server-start": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-restart": "sudo pm2 restart ecosystem.config.js --env production && npm run server-logs",
+		"server-run": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-stop": "sudo pm2 stop BikeTag",
+		"server-rerun": "sudo pm2 delete BikeTag && sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-deploy": "npm run server-update && npm run server-restart && npm run server-logs",
+		"wipe": "(rm config/config.json || true) && rm -rf temp lib templates public src controllers index.js app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KenEucker/biketag-infra.git"
+	},
+	"dependencies": {
         "sexpress": "KenEucker/sexpress.git#production"
-    },
-    "devDependencies": {},
-    "license": "CC0 1.0 Universal",
-    "generate": {
-        "enabled": true,
-        "copyServerFile": true,
-        "copyControllers": true,
-        "copyLib": true,
-        "copySrc": true,
-        "copyConfigJs": false,
-        "importDependencies": true,
-        "source": "https://github.com/KenEucker/biketag-app/archive/production.zip",
-        "templatesSource": "https://github.com/KenEucker/biketag-website/archive/production.zip"
-    }
+	},
+	"devDependencies": {},
+	"license": "CC0 1.0 Universal",
+	"generate": {
+		"enabled": true,
+		"copyServerFile": true,
+		"copyControllers": true,
+		"copyLib": true,
+		"copySrc": true,
+		"copyConfigJs": false,
+		"copyTemplateConfig": true,
+		"importDependencies": true,
+		"source": "https://github.com/KenEucker/biketag-app/archive/production.zip",
+		"templatesSource": "https://github.com/KenEucker/biketag-website/archive/production.zip"
+	}
 }
