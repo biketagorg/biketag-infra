@@ -24,7 +24,7 @@
         "url": "https://github.com/KenEucker/biketag-infra.git"
     },
     "dependencies": {
-        "sexpress": "^0.7.20"
+        "sexpress": "KenEucker/sexpress.git#production"
     },
     "devDependencies": {},
     "license": "CC0 1.0 Universal",
