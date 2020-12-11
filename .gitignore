@@ -1,1 +1,5 @@
-node_modules
+*
+
+!LICENSE
+!README.MD
+!.gitignore
