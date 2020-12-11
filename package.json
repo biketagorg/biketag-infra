@@ -8,7 +8,7 @@
 		"start": "node app.js",
 		"server-erase-config": "rm ~/biketag-website/config.json && rm ~/config.json",
 		"server-copy-config": "mv ~/config.json ~/biketag-website/config.json",
-		"server-update": "git pull && npm install",
+		"server-update": "git reset --hard HEAD && git pull && npm update",
 		"server-reinstall": "rm -rf node_modules && rm -rf package-lock.json && npm install",
 		"server-logs": "sudo pm2 logs BikeTag",
 		"server-dev": "sudo pm2 start ecosystem.config.js --env dev",
