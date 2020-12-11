@@ -31,7 +31,14 @@ jobs:
 
           git remote add upstream https://github.com/keneucker/biketag-infra.git
           git fetch upstream
-          git checkout --track origin/production
-          git checkout production
-          git merge --no-edit upstream/production
-          git push origin production
+          
+          # sync all production servers
+          git checkout --track origin/production--biketag-app-dev
+          git checkout production--biketag-app-dev
+          git merge --no-edit upstream/production--biketag-app-dev
+          git push origin production--biketag-app-dev
+          
+          git checkout --track origin/production--biketag-website-server-1
+          git checkout production--biketag-website-server-1
+          git merge --no-edit upstream/production--biketag-website-server-1
+          git push origin production--biketag-website-server-1
