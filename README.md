@@ -1,4 +1,10 @@
-# biketag-infra
-The infrastructure and deployment repositories for BikeTag servers
+# biketag-website-server-1
+The production server https://biketag.org
 
-### This production branch is intentional left blank
+Status: `Active`
+
+Info: `Version 1.0.0`
+
+Provider: `Google Compute Engine`
+
+Uptime: `Since May of 2018`
