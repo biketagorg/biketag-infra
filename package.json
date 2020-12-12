@@ -43,7 +43,7 @@
 		"copyConfigJs": true,
 		"copyTemplateConfig": true,
 		"importDependencies": true,
-		"source": "https://github.com/KenEucker/biketag-app/archive/production.zip",
-		"templatesSource": "https://github.com/KenEucker/biketag-website/archive/production.zip"
+		"source": "https://github.com/biketagorg/biketag-app/archive/production.zip",
+		"templatesSource": "https://github.com/biketagorg/biketag-website/archive/production.zip"
 	}
 }
