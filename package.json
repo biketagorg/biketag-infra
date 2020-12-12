@@ -1,0 +1,49 @@
+{
+	"name": "biketag-website-server-1",
+	"scripts": {
+		"generator": "if [ ! -e index.js ] ; then echo \"const sexpress = require('sexpress')() ; sexpress.run()\" >> index.js ; fi",
+		"firstrun": "(node index debug=true) || true",
+		"postinstall": "npm run generator && npm run firstrun && npm update",
+		"dev": "node app.js debug=true",
+		"start": "node app.js",
+		"server-erase-config": "rm ~/biketag-website/config.json && rm ~/config.json",
+		"server-copy-config": "mv ~/config.json ~/biketag-website/config.json",
+		"server-update": "git reset --hard HEAD && git pull && npm update",
+		"server-reinstall": "rm -rf node_modules && rm -rf package-lock.json && npm install",
+		"server-logs": "sudo pm2 logs BikeTag",
+		"server-dev": "sudo pm2 start ecosystem.config.js --env dev",
+		"server-start": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-restart": "sudo pm2 restart ecosystem.config.js --env production && npm run server-logs",
+		"server-run": "sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-stop": "sudo pm2 stop BikeTag",
+		"server-rerun": "sudo pm2 delete BikeTag && sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
+		"server-deploy": "npm run server-update && npm run server-restart && npm run server-logs",
+		"wipe": "(rm config/config.json || true) && rm -rf temp lib templates public src controllers index.js app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KenEucker/biketag-infra.git"
+	},
+	"dependencies": {
+		"sexpress": "^0.7.14",
+		"imgur": "https://github.com/KenEucker/node-imgur.git#keneucker/production",
+		"node-cache": "^5.1.2",
+		"path": "^0.12.7",
+		"request": "^2.88.2",
+		"snoowrap": "^1.21.0"
+	},
+	"devDependencies": {},
+	"license": "CC0 1.0 Universal",
+	"generate": {
+		"enabled": true,
+		"copyServerFile": true,
+		"copyControllers": true,
+		"copyLib": true,
+		"copySrc": true,
+		"copyConfigJs": true,
+		"copyTemplateConfig": true,
+		"importDependencies": true,
+		"source": "https://github.com/biketagorg/biketag-app/archive/production.zip",
+		"templatesSource": "https://github.com/biketagorg/biketag-website/archive/production.zip"
+	}
+}
