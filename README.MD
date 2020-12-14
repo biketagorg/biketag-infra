@@ -19,7 +19,7 @@ https://biketag.org
 
 # Contribute
 
-[Sponsore this project's development](https://github.com/sponsors/KenEucker)
+[Sponsor this project's development](https://github.com/sponsors/KenEucker)
 
 </p>
 
