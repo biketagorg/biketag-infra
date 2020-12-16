@@ -18,7 +18,7 @@
 		"server-stop": "sudo pm2 stop BikeTag",
 		"server-rerun": "sudo pm2 delete BikeTag && sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
 		"server-deploy": "npm run server-update && npm run server-restart && npm run server-logs",
-		"wipe": "(rm config/config.json || true && rm config/config.js || true ) && rm -rf temp lib templates public src controllers index.js app.js",
+		"wipe": "rm -rf temp lib templates public src controllers index.js app.js && (rm config/config.json || true && rm config/config.js || true )",
 		"reset": "rm -rf node_modules config && npm run wipe && npm run server-update"
 	},
 	"repository": {
