@@ -3,7 +3,7 @@
 	"scripts": {
 		"generator": "if [ ! -e index.js ] ; then echo \"const sexpress = require('sexpress')() ; sexpress.run()\" >> index.js ; fi",
 		"firstrun": "(node index debug=true) || true",
-		"postinstall": "npm run generator && npm run firstrun && npm update && postinstall-clean",
+		"postinstall": "npm run generator && npm run firstrun && npm update && npm run postinstall-clean",
 		"postinstall-clean": "rm index.js",
 		"dev": "node app.js debug=true",
 		"start": "node app.js",
