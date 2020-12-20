@@ -41,6 +41,7 @@
 		"copySourceConfig": false,
 		"copyTemplateConfig": true,
 		"importDependencies": true,
+		"keepExistingDepdencyVersions": true,
 		"copyPrivateConfig": true,
 		"source": "https://github.com/biketagorg/biketag-app/archive/production.zip",
 		"templatesSource": "https://github.com/biketagorg/biketag-website/archive/production.zip"
