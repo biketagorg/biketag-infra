@@ -19,7 +19,7 @@
 		"server-stop": "sudo pm2 stop BikeTag",
 		"server-rerun": "(sudo pm2 delete BikeTag || true) && sudo pm2 start ecosystem.config.js --env production && npm run server-logs",
 		"server-deploy": "npm run server-update && npm run server-restart && npm run server-logs",
-		"wipe": "rm -rf temp lib templates src controllers index.js app.js && (rm -rf public || true) && (rm config/config.json || true && rm config/config.js || true )",
+		"wipe": "rm -rf temp lib templates src controllers index.js app.js && (sudo rm -rf public || true) && (rm config/config.json || true && sudo rm config/config.js || true )",
 		"reset": "rm -rf node_modules && (rm config/* || true) && npm run wipe && npm run server-update"
 	},
 	"repository": {
@@ -31,7 +31,7 @@
 		"node-cache": "5.1.2",
 		"path": "0.12.7",
 		"request": "2.88.2",
-		"sexpress": "0.7.52",
+		"sexpress": "0.7.55",
 		"snoowrap": "1.21.0"
 	},
 	"devDependencies": {},
